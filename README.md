@@ -1,6 +1,6 @@
 # Sounder::Server
 
-TODO: Write a gem description
+A Server for Sounder
 
 ## Installation
 
@@ -18,7 +18,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Setup
+
+* Add Sounder SoundGroups to your Gemfile
+* Write a little bit of code
+* ???
+* run `sounder-server`
+
+### Routes
+| Route                       | Result
+|:----------------------------|:-----------------------------
+| /                           | Lists known sounds
+| /sound/\<sound name\>       | Returns info on the sound and its group
+| /sound/\<sound name\>/play  | Plays the sound
+| /system/volume/\<0-100\>    | Sets the volume on the server
 
 ## Contributing
 
