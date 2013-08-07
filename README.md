@@ -2,36 +2,45 @@
 
 A Server for Sounder
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'sounder-server'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sounder-server
+_Note:_ None of this is implemented yet, and it may change considerably before all is said and done.
 
 ## Usage
 
 ### Setup
 
-* Add Sounder SoundGroups to your Gemfile
-* Write a little bit of code
-* ???
-* run `sounder-server`
+Add sounder server and sound groups to your Gemfile:
+
+```ruby
+gem 'sounder-server'
+
+gem 'sounder-soundpack-archer'
+gem 'sounder-soundpack-humpday'
+```
+
+Run `bundle install`
+
+Create a config.ru like the following:
+
+```ruby
+require 'sounder/server'
+
+# requiring these registers their sounds
+require 'sounder/soundpack/archer'
+require 'sounder/soundpack/humpday'
+
+run Sounder::Server
+```
+
+Run `rackup -p 4567` or serve like any rack application
 
 ### Routes
-| Route                       | Result
-|:----------------------------|:-----------------------------
-| /                           | Lists known sounds
-| /sound/\<sound name\>       | Returns info on the sound and its group
-| /sound/\<sound name\>/play  | Plays the sound
-| /system/volume/\<0-100\>    | Sets the volume on the server
+| Route                         | Result                        | Implemented? |
+|:------------------------------|:------------------------------|:------------:|
+| /                             | Lists known sounds            | No           |
+| /soundpack/\<soundpack name\> | Returns info on the soundpack | No           |
+| /sound/\<sound name\>         | Returns info on the sound     | No           |
+| /sound/\<sound name\>/play    | Plays the sound               | No           |
+| /system/volume/\<0-100\>      | Sets the volume on the server | No           |
 
 ## Contributing
 
