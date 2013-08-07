@@ -34,13 +34,13 @@ run Sounder::Server
 Run `rackup -p 4567` or serve like any rack application
 
 ### Routes
-| Route                         | Result                        | Implemented? |
-|:------------------------------|:------------------------------|:------------:|
-| /                             | Lists known sounds            | No           |
-| /soundpack/\<soundpack name\> | Returns info on the soundpack | No           |
-| /sound/\<sound name\>         | Returns info on the sound     | No           |
-| /sound/\<sound name\>/play    | Plays the sound               | No           |
-| /system/volume/\<0-100\>      | Sets the volume on the server | No           |
+| HTTP Verb | Route                         | Result                        | Implemented? |
+|:---------:|:------------------------------|:------------------------------|:------------:|
+| GET       | /                             | Lists known sounds and some documentation | No           |
+| GET       | /soundpack/\<soundpack name\> | Returns info on the soundpack | No           |
+| GET       | /sound/\<sound name\>         | Returns info on the sound     | No           |
+| POST      | /sound/\<sound name\>         | Plays the sound               | No           |
+| POST      | /system/volume/\<0-100\>      | Sets the volume on the server | No           |
 
 ## Contributing
 
